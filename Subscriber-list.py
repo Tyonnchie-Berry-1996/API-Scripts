@@ -11,7 +11,7 @@ credentials = Credentials.from_authorized_user_info(info=a)
 
 youtube = build('youtube', 'v3', credentials=credentials)
 
-channel = 'UC8Wx__5E_zUR8jQ4rkHMw-w'
+channel = ''
 
 response = youtube.subscriptions().list(
     part='subscriberSnippet',
@@ -19,13 +19,6 @@ response = youtube.subscriptions().list(
     maxResults=250,
 ).execute()
 
-# subscriber_ids = [item['subscriberSnippet']['channelId'] for item in response.get('items', [])]
-# # # subscriber_ids = [item['subscriberSnippet'] for item in response.get('items', [])]
-# print(subscriber_ids)
-
-# print(response)
-# new_dumps = (json.dumps((response), sort_keys=True, indent=4, separators=(",", ": ")))
-# print(new_dumps)
 
 if 'items' in response:
     for item in response['items']:
