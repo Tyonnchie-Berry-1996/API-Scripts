@@ -54,6 +54,7 @@ def bugz_finder():
     
     query = bzapi.build_query(product="Fedora",
                               component="kernel",
+                              status="NEW"
                               )
 
     bugs = bzapi.query(query)
