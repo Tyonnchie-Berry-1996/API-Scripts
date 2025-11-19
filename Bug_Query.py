@@ -72,7 +72,7 @@ def bugz_finder():
 
         dependson = bzapi.query(hoping)
 
-        print(f"Found {len(dependson)} bugs with in query")
+        print("\n" + f"Found {len(dependson)} bugs with in query")
 
         for i in range(0, 1):
 
