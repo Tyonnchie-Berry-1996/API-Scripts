@@ -74,7 +74,7 @@ def bugz_finder():
 
         print(f"Found {len(dependson)} bugs with in query")
 
-        for i in range(0, len(dependson)):
+        for i in range(0, 10):
 
             matched = re.findall(r"[#]\d{1,10}", str(dependson[i]))
             print("\nRetrieving public tracking BZ")
