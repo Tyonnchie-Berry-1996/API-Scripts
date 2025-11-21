@@ -1,4 +1,5 @@
 import os
+import subprocess
 from BZ_API import api
 import urllib3
 import bugzilla
@@ -42,7 +43,27 @@ def product_finder():
 
 def bugz_finder():
     try:
-        api_key = api
+        expanded_path = os.path.expandvars('$HOME/.bashrc')
+
+        result = subprocess.run(
+            ['bash', '-c', f'source {expanded_path} && echo $BUGZILLA_API_KEY'],
+            capture_output=True,
+            text=True
+        )
+        api_key = result.stdout.strip()
+
+        if api_key:
+            api_key = api
+            print("API key set from bashrc\n")
+
+        if api_key == "":
+            api_key_file = "/home/src/API-Scripts/temp-holder.txt"
+            print("No API key found, setting temporary placeholder.")
+            input_user = input("\nCopy and paste your open API key\n> ")
+            set_key = subprocess.run([f"echo {input_user} > {api_key_file}"], shell=True, check=True)
+            user_key = subprocess.check_output(["cat", api_key_file], text=True).strip()
+            api_key = user_key
+
 
         URL = "bugzilla.redhat.com/"
 
@@ -66,7 +87,7 @@ def bugz_finder():
             link = "https://bugzilla.redhat.com/show_bug.cgi?id=" + bug_id
 
             print(bugs[i], "\n", link)
-            
+
     except IndexError:
         pass
 
