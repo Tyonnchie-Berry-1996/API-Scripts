@@ -11,7 +11,7 @@ credentials = Credentials.from_authorized_user_info(info=a)
 
 youtube = build('youtube', 'v3', credentials=credentials)
 
-channel = ''
+channel = 'PASTE_YOUR_CHANNEL_ID_HERE'
 
 response = youtube.subscriptions().list(
     part='subscriberSnippet',
