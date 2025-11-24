@@ -1,4 +1,4 @@
-from googleapiclient.discovery import build
+from google_api_client import GoogleAPIClient
 
 api_key = PASTE_YOUR_API_KEY_HERE
 
