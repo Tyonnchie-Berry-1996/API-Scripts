@@ -98,7 +98,6 @@ def bugz_finder():
         pass
 
 if __name__ == '__main__':
-    # product_finder()
     bugz_finder()
 
 
