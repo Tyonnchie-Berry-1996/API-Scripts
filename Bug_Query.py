@@ -52,7 +52,6 @@ def bugz_finder():
         api_key = result.stdout.strip()
 
         if api_key:
-            api_key = api
             print("API key set from bashrc\n")
 
         if api_key == "":
@@ -62,7 +61,6 @@ def bugz_finder():
             set_key = subprocess.run([f"echo {input_user} > {api_key_file}"], shell=True, check=True)
             user_key = subprocess.check_output(["cat", api_key_file], text=True).strip()
             api_key = user_key
-
 
         URL = "bugzilla.redhat.com/"
 
