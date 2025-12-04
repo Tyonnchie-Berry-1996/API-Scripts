@@ -43,6 +43,7 @@ def product_finder():
 def bugz_finder():
     try:
         expanded_path = os.path.expandvars('$HOME/.bashrc')
+        home_base = os.environ['HOME']
 
         result = subprocess.run(
             ['bash', '-c', f'source {expanded_path} && echo $BUGZILLA_API_KEY'],
@@ -55,7 +56,7 @@ def bugz_finder():
             print("API key set from bashrc\n")
 
         if api_key == "":
-            api_key_file = "/home/src/API-Scripts/temp-holder.txt"
+            api_key_file = f"{home_base}/src/API-Scripts/temp-holder.txt"
             print("No API key found, setting temporary placeholder.")
             input_user = input("\nCopy and paste your open API key\n ")
             set_key = subprocess.run([f"echo {input_user} > {api_key_file}"], shell=True, check=True)
@@ -69,7 +70,7 @@ def bugz_finder():
 
         query = bzapi.build_query(product="Fedora",
                                   component="kernel",
-                                  limit=5
+                                  limit=10
                                   )
 
         bugs = bzapi.query(query)
@@ -85,7 +86,7 @@ def bugz_finder():
 
             print(bugs[i], "\n", link, "\n")
 
-        temp_file = f"/home/src/API-Scripts/temp-holder.txt"
+        temp_file = f"{home_base}/src/API-Scripts/temp-holder.txt"
         if len(str(temp_file)) > 0:
             with open(temp_file, 'w') as f:
                 f.write('')
