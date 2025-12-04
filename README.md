@@ -34,17 +34,19 @@ Each script is a bare-bones starting point that shows how to authenticate, hit e
    source API/bin/activate
    ```
 
-5. ***Upgrade pip and install the requirements file***
+4. ***Upgrade pip and install the requirements file***
 
    ```bash
     python3 -m pip install --upgrade pip
     python3 -m pip install -r requirements.txt
+    python3 -m pip install lxml
    ```
    >Or try this
 
    ```bash
     pip install --upgrade pip
     pip install -r requirements.txt
+    pip install lxml
    ```
 
 
