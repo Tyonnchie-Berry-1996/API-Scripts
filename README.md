@@ -69,4 +69,9 @@ Let's take it up a notch
 For the scripts <code>Bug_Query.py</code>, <code>YT-OAuth.py</code>, <code>Youtube-API.py</code>, and <code>Subscriber-list.py</code>
 they require a bit of authentication. 
 
-For <code>Bug_Query.py</code> you need and API key which can be found here: https://bugzilla.redhat.com/userprefs.cgi?tab=apikey the script will auto detect if you have the API key expoterd as a varaible using subprocess, echo command, and os.  
+For <code>Bug_Query.py</code> you need and API key which can be found here: https://bugzilla.redhat.com/userprefs.cgi?tab=apikey the script will auto detect if you have the API key expoterd as a varaible using subprocess, echo command, and os. I would recommend setting this up before running your venv and if you still have your venv up make sure you run <code>deactivate</code> before the next steps 
+
+1. ***Quickstart***
+     ```bash
+     echo echo $BUGZILLA_API_KEY
+     ```
