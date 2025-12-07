@@ -80,8 +80,9 @@ Each script is a bare-bones starting point that shows how to authenticate, hit e
    
    The script supports auto detection for environment variables and if it doesn't detect a env var you will be asked to copy and paste you API key into the terminal 
    
-   1. **Environment variable (recommended)**  
+    **Environment variable (recommended)**  
       Export your key before running the script:
       ```bash
       export BUGZILLA_API_KEY="your_api_key_here"
       ```
+I will add video tutorials for how to authenticate <code>YT-OAuth.py</code>, <code>Youtube-API.py</code>, <code>Subscriber-list.py</code> soon!
