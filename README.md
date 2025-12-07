@@ -48,5 +48,7 @@ Each script is a bare-bones starting point that shows how to authenticate, hit e
     pip install -r requirements.txt
     pip install lxml
    ```
-
-
+5. ***Try some easy to use API scripts***
+   ```bash
+   
+   ```   
