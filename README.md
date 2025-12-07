@@ -85,4 +85,4 @@ Each script is a bare-bones starting point that shows how to authenticate, hit e
       ```bash
       export BUGZILLA_API_KEY="your_api_key_here"
       ```
-I will add video tutorials for how to authenticate <code>YT-OAuth.py</code>, <code>Youtube-API.py</code>, <code>Subscriber-list.py</code> soon!
+   I will add video tutorials for how to authenticate <code>YT-OAuth.py</code>, <code>Youtube-API.py</code>, <code>Subscriber-list.py</code> soon!
