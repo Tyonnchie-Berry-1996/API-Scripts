@@ -1,6 +1,7 @@
 from google_auth_oauthlib.flow import InstalledAppFlow
 from pathlib import Path
 import json
+import subprocess
 
 SCOPES = ['https://www.googleapis.com/auth/youtube.readonly']
 credentials_file = Path("credentials.json")
