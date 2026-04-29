@@ -44,7 +44,7 @@ def api_call():
             chan_id_temp = f"{home_base}/src/API-Scripts/temp-id-holder.txt"
             print("No API key found, setting temporary placeholder.")
 
-            input_user = input("\nCopy and paste your Youtube API key\n ")
+            input_user = input("\nCopy and paste your Youtube channel ID key\n ")
 
             subprocess.run([f"echo {input_user} > {chan_id_temp}"], shell=True, check=True)
             user_id = subprocess.check_output(["cat", chan_id_temp], text=True).strip()
