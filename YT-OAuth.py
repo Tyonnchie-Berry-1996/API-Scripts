@@ -9,16 +9,16 @@ if credentials_file.exists():
     with open(credentials_file, 'r') as f:
         client_credentials = json.load(f)
 
-        client_id = input("\nPaste your client id").strip().lower()
+        client_id = input("\nPaste your client id: ").strip().lower()
         client_credentials['installed']['client_id'] = client_id
 
-        client_secret = input("\nPaste your client secret").strip().lower()
+        client_secret = input("\nPaste your client secret: ").strip().lower()
         client_credentials['installed']['client_secret'] = client_secret
 
-        project_id = input("\nPaste your project id").strip().lower()
+        project_id = input("\nPaste your project id: ").strip().lower()
         client_credentials['installed']['project_id'] = project_id
 
-        refresh_token = input("\nPaste your refresh token").strip().lower()
+        refresh_token = input("\nPaste your refresh token: ").strip().lower()
         client_credentials['installed']['refresh_token'] = refresh_token
 
     with open(credentials_file, 'w') as e:
