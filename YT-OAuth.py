@@ -37,7 +37,7 @@ credentials = flow.run_local_server(access_type='offline')
 print("Authentication verified and successful\n")
 print("Access token:", credentials.token)
 print("Refresh token:", credentials.refresh_token)
-print("Token expiry:", credentials.expiry\n)
+print("Token expiry:", credentials.expiry, "\n")
 
 client_id = "EMPTY_PLACE_HOLDER"
 client_credentials['installed']['client_id'] = client_id
