@@ -79,7 +79,7 @@ def bugz_finder():
 
         bugs = bzapi.query(query)
 
-        print(f"\nFound {len(bugs)} bugs in query")
+        print(f"Found {len(bugs)} bugs in query")
 
         for i in range(0, len(bugs)):
             matches = re.findall(r"[#]\d{1,10}", str(bugs[i]))
