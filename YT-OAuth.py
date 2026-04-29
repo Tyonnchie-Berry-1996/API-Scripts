@@ -21,6 +21,8 @@ if credentials_file.exists():
         refresh_token = input("\nPaste your refresh token: ").strip()
         client_credentials['installed']['refresh_token'] = refresh_token
 
+        subprocess.run(["clear"])
+
     with open(credentials_file, 'w') as e:
         json.dump(client_credentials, e, indent=4)
 
@@ -32,10 +34,22 @@ flow = InstalledAppFlow.from_client_config(client_credentials, SCOPES)
 
 credentials = flow.run_local_server(access_type='offline')
 
+print("Authentication verified and successful\n")
 print("Access token:", credentials.token)
 print("Refresh token:", credentials.refresh_token)
-print("Token expiry:", credentials.expiry)
+print("Token expiry:", credentials.expiry\n)
 
+client_id = "EMPTY_PLACE_HOLDER"
+client_credentials['installed']['client_id'] = client_id
+
+client_secret = "EMPTY_PLACE_HOLDER"
+client_credentials['installed']['client_secret'] = client_secret
+
+project_id = "EMPTY_PLACE_HOLDER"
+client_credentials['installed']['project_id'] = project_id
+
+refresh_token = "EMPTY_PLACE_HOLDER"
+client_credentials['installed']['refresh_token'] = refresh_token
 
 
 
