@@ -43,7 +43,6 @@ youtube = auth_helper()
 response = youtube.subscriptions().list(
     part="snippet",
     mySubscribers=True,
-    mine=True,
     maxResults=50
 ).execute()
 
@@ -53,3 +52,21 @@ if "items" in response:
         print(item)
 else:
     print("No subscribers found.")
+
+with open(credentials_file, 'r') as f:
+    client_credentials = json.load(f)
+
+    client_id = "EMPTY_PLACE_HOLDER"
+    client_credentials['installed']['client_id'] = client_id
+
+    client_secret = "EMPTY_PLACE_HOLDER"
+    client_credentials['installed']['client_secret'] = client_secret
+
+    project_id = "EMPTY_PLACE_HOLDER"
+    client_credentials['installed']['project_id'] = project_id
+
+    refresh_token = "EMPTY_PLACE_HOLDER"
+    client_credentials['installed']['refresh_token'] = refresh_token
+
+with open(credentials_file, 'w') as e:
+    json.dump(client_credentials, e, indent=4)
