@@ -35,8 +35,8 @@ flow = InstalledAppFlow.from_client_config(client_credentials, SCOPES)
 
 credentials = flow.run_local_server(access_type='offline')
 
-print("Authentication verified and successful\n")
-print("Access token:", credentials.token)
+print("\nAuthentication verified and successful\n")
+print("\nAccess token:", credentials.token)
 print("Refresh token:", credentials.refresh_token)
 print("Token expiry:", credentials.expiry, "\n")
 
